@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="index.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./node_modules/cropperjs/dist/cropper.min.css" />
+</head>
+<body>
+    <body style="width: 100%;">
+        
+        <nav style="width: 100%;padding:10px">
+            <div style="display: flex; flex-direction: row; justify-content: space-between; width: 100%;">
+              
+              <div>
+                <ul class="list" style="list-style-type: none; padding: 0; margin: 0;">
+                  <li><img class="profileimg" src="chat.png" alt="chatgpt"></li>
+                  <li style="color: #000000; opacity: 100%;">DALLE</li>
+                  <li style="color: #000000; opacity: 60%;">History</li>
+                  <li style="color: #000000; opacity: 60%;">Collections</li>
+                </ul>
+              </div>
+        
+              <div style="display: flex;align-items: cneter;gap:20px">
+                <i style="font-size: 2.5rem;" class="fa-solid fa-ellipsis"></i>
+                <img class="profileimg" src="p1.jpg" alt="profile" />
+                
+              </div>
+        
+            </div>
+          </nav>
+
+    <div id="maindiv" style="display: flex;flex-direction: row;width: 100%;justify-content: space-between;">
+       
+        <div id="subdiv" style="width: 75%;">
+          <div class="editing">
+
+            <div style="display: flex;flex-direction: row;justify-content: space-between;width: 100%;align-items: center;">
+               
+            <div>
+                <span style="font-size: 1.5rem;">Edit the detailed description</span>
+            </div>
+            <div style="display: flex;gap: 50px;">
+                <button style="background-color: BEBEBE;border-style: none;margin:0;font-size: 1rem;border-radius: 5px;">suprise me</button>
+                <button style="background-color: BEBEBE;border-style: none;padding: 5px;font-size: 1rem;border-radius: 5px;">Upload</button>
+                <i style="font-size: 1.7rem;" class="fa-solid fa-upload"></i>
+            </div>
+
+            </div>
+
+            <div style="display: flex;align-items:center; flex-direction:row;justify-content: space-between;margin-top:20px;border: 1px solid #000000;padding: 10px;border-radius: 10px;">
+            <div>
+                <button style="background-color: BEBEBE;border-style: none;">Edit</button>
+                <span>some pictures of tree in desert</span>
+            </div>
+                <button style="background-color: black;color: white;padding: 5px;border-radius: 5px;">Generate</button>
+            </div>
+
+            <div class="imgcontainer" style="margin-top:10%">
+                <img id="image" class="editedimg" src="scene.jpg" alt="tree image" />
+                <img id="image" class="editedimg" src="scene.jpg" alt="tree image" />
+                <img id="image" class="editedimg" src="scene.jpg" alt="tree image" />
+                <img id="image" class="editedimg" src="scene.jpg" alt="tree image" />
+              </div>
+          </div>
+
+         
+        </div>
+
+        <div id="seconddiv" style="width: 75%;">
+            <div class="editing">
+  
+            <div style="display: flex;flex-direction: row;justify-content: flex-end;width: 100%;align-items: center;">
+                 
+              <div style="display: flex;gap: 10px;">
+                  <button style="background-color: BEBEBE;border-style: none;padding: 5px;font-size: 1rem;border-radius: 5px;margin:0px">Edit</button>
+                  <button style="background-color: BEBEBE;border-style: none;padding: 5px;font-size: 1rem;border-radius: 5px;margin:0px">Variations</button>
+                  <button style="background-color: BEBEBE;border-style: none;padding: 5px;font-size: 1rem;border-radius: 5px;margin:0px">Share</button>
+                  <button style="background-color:black;color:white;border-style:none;padding: 5px;font-size: 1rem;border-radius: 5px;margin:0px;">Save<i class="fa-solid fa-chevron-down"></i></button>
+              </div>
+  
+            </div>
+            <div>
+                <span id="back" style="font-size: 2rem;font-weight: bold;cursor: pointer;"> < Back</span>
+            </div>
+            <div style="display: flex;align-items: center;justify-content: center;margin-top:30px;flex-direction: column;">
+                <img class="imageforedit" src="scene.jpg" alt="image" />
+                <div style="display: flex;flex-direction: row;justify-content: space-between;width: 200px;gap: 5px;align-items: center;justify-content: center;margin-top:5px">
+                <i id="icons" class="fa-solid fa-arrow-pointer"></i>
+                <i id="icons" class="fa-regular fa-hand"></i>
+                <i id="icons" class="fa-solid fa-eraser"></i>
+                <i id="icons-crop" class="fa-solid fa-crop-simple"></i>
+                <i id="icons" class="fa-solid fa-file-image"></i>
+            </div>
+
+            </div>
+              
+  
+            </div>
+  
+            
+          </div>
+    
+        <div id="sidediv" style="width: 20%;flex-direction: column;gap: 20px;align-items: center;">
+            <div style="display: flex;width: 100%;justify-content: space-around;height: 5%;align-items: center;">
+                <span>Recent</span>
+                <button style="border-style:none;padding:0px 10px;font-size: 1.3rem;border-radius: 15px;">clear</button>
+            </div>
+            <div>
+                <img class="sidebarimg" src="p1.jpg" alt="image" />
+                <img class="sidebarimg" src="p1.jpg" alt="image" />
+                <img class="sidebarimg" src="p1.jpg" alt="image" />
+                <img class="sidebarimg" src="p1.jpg" alt="image" />
+            </div>
+            <div>
+                <img class="sidebarimg" src="tree.jpeg" alt="image" />
+                <img class="sidebarimg" src="tree.jpeg" alt="image" />
+                <img class="sidebarimg" src="tree.jpeg" alt="image" />
+                <img class="sidebarimg" src="tree.jpeg" alt="image" />
+            </div>
+            <div>
+                <img class="sidebarimg" src="tree.jpeg" alt="image" />
+                <img class="sidebarimg" src="tree.jpeg" alt="image" />
+                <img class="sidebarimg" src="tree.jpeg" alt="image" />
+                <img class="sidebarimg" src="tree.jpeg" alt="image" />
+            </div>
+            <div>
+                <img class="sidebarimg" src="p1.jpg" alt="image" />
+                <img class="sidebarimg" src="p1.jpg" alt="image" />
+                <img class="sidebarimg" src="p1.jpg" alt="image" />
+                <img class="sidebarimg" src="p1.jpg" alt="image" />
+            </div>
+            <div>
+                <img class="sidebarimg" src="scene.jpg" alt="image" />
+                <img class="sidebarimg" src="scene.jpg" alt="image" />
+                <img class="sidebarimg" src="scene.jpg" alt="image" />
+                <img class="sidebarimg" src="scene.jpg" alt="image" />
+            </div>
+            <div>
+                <img class="sidebarimg" src="p1.jpg" alt="image" />
+                <img class="sidebarimg" src="p1.jpg" alt="image" />
+                <img class="sidebarimg" src="p1.jpg" alt="image" />
+                <img class="sidebarimg" src="p1.jpg" alt="image" />
+            </div>
+            <div>
+                <img class="sidebarimg" src="p1.jpg" alt="image" />
+                <img class="sidebarimg" src="p1.jpg" alt="image" />
+                <img class="sidebarimg" src="p1.jpg" alt="image" />
+                <img class="sidebarimg" src="p1.jpg" alt="image" />
+            </div>
+           
+        </div>
+
+        <div id="editingdiv" style="width: 90%;flex-direction: column;">
+            <div class="editingimg">
+    
+                <div style="width: 90%;">
+                    <span id="editImage" style="font-size: 1.5rem;font-weight: bold;cursor: pointer;">< Edit image</span>
+                </div>
+    
+              <div style="width:90%;display:flex;align-items:center; flex-direction:row;justify-content: space-between;margin-top:20px;border: 1px solid #000000;padding: 10px;border-radius: 10px;">
+             
+                <div>
+                  <button style="background-color: BEBEBE;border-style: none;">Edit</button>
+                  <span>some pictures of tree in desert</span>
+              </div>
+                  <button id="generate" style="background-color: black;color: white;padding: 5px;border-radius: 5px;">Generate</button>
+              </div>
+    
+            </div>
+    
+            <div style="margin-top:2%;display: flex;flex-direction: column;align-items: center;justify-content: center;">
+                <div>
+                <img id="croppedimage" class="imageforedit" src="scene.jpg" alt="image" />
+            </div>
+                <div style="display: flex;flex-direction: row;justify-content: space-between;width: 200px;gap: 5px;align-items: center;justify-content: center;margin-top:5px">
+                <i id="icons" class="fa-solid fa-arrow-pointer"></i>
+                <i id="icons" class="fa-regular fa-hand"></i>
+                <i id="icons" class="fa-solid fa-eraser"></i>
+                <i id="icon-crop" class="fa-solid fa-crop-simple"></i>
+                <i id="icons" class="fa-solid fa-file-image"></i>
+            </div>
+            
+            </div>
+    
+          </div>
+    </div>
+
+<script>
+    let subdiv = document.getElementById('subdiv');
+    let editingdiv = document.getElementById('editingdiv');
+    let sidediv = document.getElementById('sidediv');
+    let image = document.getElementById('image');
+    let back = document.getElementById('back');
+    let seconddiv = document.getElementById('seconddiv');
+    let iconsCrop = document.getElementById('icons-crop');
+    let editImage = document.getElementById('editImage');
+    let iconCrop = document.getElementById('icon-crop');
+    let generate = document.getElementById('generate');
+    image.addEventListener('click',()=>{
+        subdiv.style.display = 'none';
+        seconddiv.style.display = 'flex';
+        sidediv.style.display = 'none';
+    })
+
+    back.addEventListener('click',()=>{
+        seconddiv.style.display = 'none';
+        subdiv.style.display = 'flex';
+        sidediv.style.display = 'flex';
+    })
+
+    iconsCrop.addEventListener('click',()=>{
+        seconddiv.style.display = 'none';
+        editingdiv.style.display = 'flex';
+    })
+
+    editImage.addEventListener('click',()=>{
+        editingdiv.style.display= 'none';
+        subdiv.style.display = 'flex';
+        sidediv.style.display = 'flex';
+    })
+
+    let cropper;
+    let croppedimage = document.getElementById('croppedimage');
+    iconCrop.addEventListener('click',()=>{
+         cropper = new Cropper(croppedimage,{
+            aspectRatio:0,
+            vewmode:0
+        }); 
+       
+    })
+
+    generate.addEventListener('click',()=>{
+        croppedimage.src = cropper;
+    })
+</script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.js" integrity="sha512-9KkIqdfN7ipEW6B6k+Aq20PV31bjODg4AA52W+tYtAE0jE0kMx49bjJ3FgvS56wzmyfMUHbQ4Km2b7l9+Y/+Eg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+-->
+<script src="./node_modules/cropperjs/dist/cropper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
